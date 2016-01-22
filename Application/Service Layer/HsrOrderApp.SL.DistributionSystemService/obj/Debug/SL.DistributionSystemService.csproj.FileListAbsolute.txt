@@ -1,0 +1,10 @@
+C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.DistributionSystemService\bin\Debug\HsrOrderApp.SL.DistributionSystemService.exe.config
+C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.DistributionSystemService\bin\Debug\HsrOrderApp.SL.DistributionSystemService.exe
+C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.DistributionSystemService\bin\Debug\HsrOrderApp.SL.DistributionSystemService.pdb
+C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.DistributionSystemService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.DistributionSystemService\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.DistributionSystemService\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.DistributionSystemService\bin\Debug\Microsoft.Practices.Unity.dll
+C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.DistributionSystemService\obj\Debug\SL.DistributionSystemService.csprojResolveAssemblyReference.cache
+C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.DistributionSystemService\obj\Debug\HsrOrderApp.SL.DistributionSystemService.exe
+C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.DistributionSystemService\obj\Debug\HsrOrderApp.SL.DistributionSystemService.pdb

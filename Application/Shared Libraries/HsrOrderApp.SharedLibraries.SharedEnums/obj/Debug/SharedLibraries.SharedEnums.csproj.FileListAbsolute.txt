@@ -1,0 +1,5 @@
+C:\HSR_Project\Application\Shared Libraries\HsrOrderApp.SharedLibraries.SharedEnums\bin\Debug\HsrOrderApp.SharedLibraries.SharedEnums.dll
+C:\HSR_Project\Application\Shared Libraries\HsrOrderApp.SharedLibraries.SharedEnums\bin\Debug\HsrOrderApp.SharedLibraries.SharedEnums.pdb
+C:\HSR_Project\Application\Shared Libraries\HsrOrderApp.SharedLibraries.SharedEnums\obj\Debug\SharedLibraries.SharedEnums.csprojResolveAssemblyReference.cache
+C:\HSR_Project\Application\Shared Libraries\HsrOrderApp.SharedLibraries.SharedEnums\obj\Debug\HsrOrderApp.SharedLibraries.SharedEnums.dll
+C:\HSR_Project\Application\Shared Libraries\HsrOrderApp.SharedLibraries.SharedEnums\obj\Debug\HsrOrderApp.SharedLibraries.SharedEnums.pdb

@@ -1,0 +1,9 @@
+C:\HSR_Project\Application\Business Layer\HsrOrderApp.BL.Core\bin\Debug\HsrOrderApp.BL.Core.dll
+C:\HSR_Project\Application\Business Layer\HsrOrderApp.BL.Core\bin\Debug\HsrOrderApp.BL.Core.pdb
+C:\HSR_Project\Application\Business Layer\HsrOrderApp.BL.Core\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Validation.dll
+C:\HSR_Project\Application\Business Layer\HsrOrderApp.BL.Core\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\HSR_Project\Application\Business Layer\HsrOrderApp.BL.Core\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\HSR_Project\Application\Business Layer\HsrOrderApp.BL.Core\bin\Debug\Microsoft.Practices.Unity.dll
+C:\HSR_Project\Application\Business Layer\HsrOrderApp.BL.Core\obj\Debug\BL.Core.csprojResolveAssemblyReference.cache
+C:\HSR_Project\Application\Business Layer\HsrOrderApp.BL.Core\obj\Debug\HsrOrderApp.BL.Core.dll
+C:\HSR_Project\Application\Business Layer\HsrOrderApp.BL.Core\obj\Debug\HsrOrderApp.BL.Core.pdb
