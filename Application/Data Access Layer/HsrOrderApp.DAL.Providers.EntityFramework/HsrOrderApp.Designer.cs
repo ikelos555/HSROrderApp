@@ -25,6 +25,8 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("HsrOrderAppModel", "FK_OrderDetails_Products", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(HsrOrderApp.DAL.Providers.EntityFramework.Product), "OrderDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(HsrOrderApp.DAL.Providers.EntityFramework.OrderDetail))]
 [assembly: EdmRelationshipAttribute("HsrOrderAppModel", "CustomerAddresses", "Addresses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(HsrOrderApp.DAL.Providers.EntityFramework.Address), "Customers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(HsrOrderApp.DAL.Providers.EntityFramework.Customer))]
 [assembly: EdmRelationshipAttribute("HsrOrderAppModel", "UserInRoles", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(HsrOrderApp.DAL.Providers.EntityFramework.Role), "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(HsrOrderApp.DAL.Providers.EntityFramework.User))]
+[assembly: EdmRelationshipAttribute("HsrOrderAppModel", "FK__SupplierP__Produ__2334397B", "Product", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(HsrOrderApp.DAL.Providers.EntityFramework.Product), "SupplierProduct", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(HsrOrderApp.DAL.Providers.EntityFramework.SupplierProduct), true)]
+[assembly: EdmRelationshipAttribute("HsrOrderAppModel", "FK__SupplierP__Accou__22401542", "Supplier", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(HsrOrderApp.DAL.Providers.EntityFramework.Supplier), "SupplierProduct", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(HsrOrderApp.DAL.Providers.EntityFramework.SupplierProduct), true)]
 
 #endregion
 
@@ -184,6 +186,38 @@ namespace HsrOrderApp.DAL.Providers.EntityFramework
             }
         }
         private ObjectSet<User> _UserSet;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Supplier> SupplierSet
+        {
+            get
+            {
+                if ((_SupplierSet == null))
+                {
+                    _SupplierSet = base.CreateObjectSet<Supplier>("SupplierSet");
+                }
+                return _SupplierSet;
+            }
+        }
+        private ObjectSet<Supplier> _SupplierSet;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<SupplierProduct> SupplierProduct
+        {
+            get
+            {
+                if ((_SupplierProduct == null))
+                {
+                    _SupplierProduct = base.CreateObjectSet<SupplierProduct>("SupplierProduct");
+                }
+                return _SupplierProduct;
+            }
+        }
+        private ObjectSet<SupplierProduct> _SupplierProduct;
 
         #endregion
 
@@ -243,6 +277,22 @@ namespace HsrOrderApp.DAL.Providers.EntityFramework
         public void AddToUserSet(User user)
         {
             base.AddObject("UserSet", user);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the SupplierSet EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToSupplierSet(Supplier supplier)
+        {
+            base.AddObject("SupplierSet", supplier);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the SupplierProduct EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToSupplierProduct(SupplierProduct supplierProduct)
+        {
+            base.AddObject("SupplierProduct", supplierProduct);
         }
 
         #endregion
@@ -1433,6 +1483,28 @@ namespace HsrOrderApp.DAL.Providers.EntityFramework
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("HsrOrderAppModel", "FK__SupplierP__Produ__2334397B", "SupplierProduct")]
+        public EntityCollection<SupplierProduct> SupplierProduct
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<SupplierProduct>("HsrOrderAppModel.FK__SupplierP__Produ__2334397B", "SupplierProduct");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<SupplierProduct>("HsrOrderAppModel.FK__SupplierP__Produ__2334397B", "SupplierProduct", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -1565,6 +1637,642 @@ namespace HsrOrderApp.DAL.Providers.EntityFramework
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("HsrOrderAppModel.UserInRoles", "Users", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="HsrOrderAppModel", Name="Supplier")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Supplier : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Supplier object.
+        /// </summary>
+        /// <param name="accountNumber">Initial value of the AccountNumber property.</param>
+        /// <param name="addressId">Initial value of the AddressId property.</param>
+        /// <param name="supplierProductId">Initial value of the SupplierProductId property.</param>
+        /// <param name="creditRating">Initial value of the CreditRating property.</param>
+        /// <param name="preferedSupplier">Initial value of the PreferedSupplier property.</param>
+        /// <param name="activeFlag">Initial value of the ActiveFlag property.</param>
+        /// <param name="purchaseWebserviceUrl">Initial value of the PurchaseWebserviceUrl property.</param>
+        /// <param name="version">Initial value of the Version property.</param>
+        public static Supplier CreateSupplier(global::System.Int32 accountNumber, global::System.Int32 addressId, global::System.Int32 supplierProductId, global::System.Int32 creditRating, global::System.Int32 preferedSupplier, global::System.Boolean activeFlag, global::System.String purchaseWebserviceUrl, global::System.Byte[] version)
+        {
+            Supplier supplier = new Supplier();
+            supplier.AccountNumber = accountNumber;
+            supplier.AddressId = addressId;
+            supplier.SupplierProductId = supplierProductId;
+            supplier.CreditRating = creditRating;
+            supplier.PreferedSupplier = preferedSupplier;
+            supplier.ActiveFlag = activeFlag;
+            supplier.PurchaseWebserviceUrl = purchaseWebserviceUrl;
+            supplier.Version = version;
+            return supplier;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 AccountNumber
+        {
+            get
+            {
+                return _AccountNumber;
+            }
+            set
+            {
+                if (_AccountNumber != value)
+                {
+                    OnAccountNumberChanging(value);
+                    ReportPropertyChanging("AccountNumber");
+                    _AccountNumber = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("AccountNumber");
+                    OnAccountNumberChanged();
+                }
+            }
+        }
+        private global::System.Int32 _AccountNumber;
+        partial void OnAccountNumberChanging(global::System.Int32 value);
+        partial void OnAccountNumberChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 AddressId
+        {
+            get
+            {
+                return _AddressId;
+            }
+            set
+            {
+                OnAddressIdChanging(value);
+                ReportPropertyChanging("AddressId");
+                _AddressId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AddressId");
+                OnAddressIdChanged();
+            }
+        }
+        private global::System.Int32 _AddressId;
+        partial void OnAddressIdChanging(global::System.Int32 value);
+        partial void OnAddressIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 SupplierProductId
+        {
+            get
+            {
+                return _SupplierProductId;
+            }
+            set
+            {
+                OnSupplierProductIdChanging(value);
+                ReportPropertyChanging("SupplierProductId");
+                _SupplierProductId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SupplierProductId");
+                OnSupplierProductIdChanged();
+            }
+        }
+        private global::System.Int32 _SupplierProductId;
+        partial void OnSupplierProductIdChanging(global::System.Int32 value);
+        partial void OnSupplierProductIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CreditRating
+        {
+            get
+            {
+                return _CreditRating;
+            }
+            set
+            {
+                OnCreditRatingChanging(value);
+                ReportPropertyChanging("CreditRating");
+                _CreditRating = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CreditRating");
+                OnCreditRatingChanged();
+            }
+        }
+        private global::System.Int32 _CreditRating;
+        partial void OnCreditRatingChanging(global::System.Int32 value);
+        partial void OnCreditRatingChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 PreferedSupplier
+        {
+            get
+            {
+                return _PreferedSupplier;
+            }
+            set
+            {
+                OnPreferedSupplierChanging(value);
+                ReportPropertyChanging("PreferedSupplier");
+                _PreferedSupplier = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PreferedSupplier");
+                OnPreferedSupplierChanged();
+            }
+        }
+        private global::System.Int32 _PreferedSupplier;
+        partial void OnPreferedSupplierChanging(global::System.Int32 value);
+        partial void OnPreferedSupplierChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean ActiveFlag
+        {
+            get
+            {
+                return _ActiveFlag;
+            }
+            set
+            {
+                OnActiveFlagChanging(value);
+                ReportPropertyChanging("ActiveFlag");
+                _ActiveFlag = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ActiveFlag");
+                OnActiveFlagChanged();
+            }
+        }
+        private global::System.Boolean _ActiveFlag;
+        partial void OnActiveFlagChanging(global::System.Boolean value);
+        partial void OnActiveFlagChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String PurchaseWebserviceUrl
+        {
+            get
+            {
+                return _PurchaseWebserviceUrl;
+            }
+            set
+            {
+                OnPurchaseWebserviceUrlChanging(value);
+                ReportPropertyChanging("PurchaseWebserviceUrl");
+                _PurchaseWebserviceUrl = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("PurchaseWebserviceUrl");
+                OnPurchaseWebserviceUrlChanged();
+            }
+        }
+        private global::System.String _PurchaseWebserviceUrl;
+        partial void OnPurchaseWebserviceUrlChanging(global::System.String value);
+        partial void OnPurchaseWebserviceUrlChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] Version
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_Version);
+            }
+            set
+            {
+                OnVersionChanging(value);
+                ReportPropertyChanging("Version");
+                _Version = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Version");
+                OnVersionChanged();
+            }
+        }
+        private global::System.Byte[] _Version;
+        partial void OnVersionChanging(global::System.Byte[] value);
+        partial void OnVersionChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("HsrOrderAppModel", "FK__SupplierP__Accou__22401542", "SupplierProduct")]
+        public EntityCollection<SupplierProduct> SupplierProduct
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<SupplierProduct>("HsrOrderAppModel.FK__SupplierP__Accou__22401542", "SupplierProduct");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<SupplierProduct>("HsrOrderAppModel.FK__SupplierP__Accou__22401542", "SupplierProduct", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="HsrOrderAppModel", Name="SupplierProduct")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class SupplierProduct : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new SupplierProduct object.
+        /// </summary>
+        /// <param name="supplierProductId">Initial value of the SupplierProductId property.</param>
+        /// <param name="accountNumber">Initial value of the AccountNumber property.</param>
+        /// <param name="productId">Initial value of the ProductId property.</param>
+        /// <param name="averageLeadTime">Initial value of the AverageLeadTime property.</param>
+        /// <param name="standardPrice">Initial value of the StandardPrice property.</param>
+        /// <param name="lastReceiveCost">Initial value of the LastReceiveCost property.</param>
+        /// <param name="lastReceiveDate">Initial value of the LastReceiveDate property.</param>
+        /// <param name="minOrderQuantity">Initial value of the MinOrderQuantity property.</param>
+        /// <param name="maxOrderQuantity">Initial value of the MaxOrderQuantity property.</param>
+        /// <param name="version">Initial value of the Version property.</param>
+        public static SupplierProduct CreateSupplierProduct(global::System.Int32 supplierProductId, global::System.Int32 accountNumber, global::System.Int32 productId, global::System.DateTime averageLeadTime, global::System.Decimal standardPrice, global::System.Decimal lastReceiveCost, global::System.DateTime lastReceiveDate, global::System.Int32 minOrderQuantity, global::System.Int32 maxOrderQuantity, global::System.Byte[] version)
+        {
+            SupplierProduct supplierProduct = new SupplierProduct();
+            supplierProduct.SupplierProductId = supplierProductId;
+            supplierProduct.AccountNumber = accountNumber;
+            supplierProduct.ProductId = productId;
+            supplierProduct.AverageLeadTime = averageLeadTime;
+            supplierProduct.StandardPrice = standardPrice;
+            supplierProduct.LastReceiveCost = lastReceiveCost;
+            supplierProduct.LastReceiveDate = lastReceiveDate;
+            supplierProduct.MinOrderQuantity = minOrderQuantity;
+            supplierProduct.MaxOrderQuantity = maxOrderQuantity;
+            supplierProduct.Version = version;
+            return supplierProduct;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 SupplierProductId
+        {
+            get
+            {
+                return _SupplierProductId;
+            }
+            set
+            {
+                if (_SupplierProductId != value)
+                {
+                    OnSupplierProductIdChanging(value);
+                    ReportPropertyChanging("SupplierProductId");
+                    _SupplierProductId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("SupplierProductId");
+                    OnSupplierProductIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _SupplierProductId;
+        partial void OnSupplierProductIdChanging(global::System.Int32 value);
+        partial void OnSupplierProductIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 AccountNumber
+        {
+            get
+            {
+                return _AccountNumber;
+            }
+            set
+            {
+                OnAccountNumberChanging(value);
+                ReportPropertyChanging("AccountNumber");
+                _AccountNumber = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AccountNumber");
+                OnAccountNumberChanged();
+            }
+        }
+        private global::System.Int32 _AccountNumber;
+        partial void OnAccountNumberChanging(global::System.Int32 value);
+        partial void OnAccountNumberChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ProductId
+        {
+            get
+            {
+                return _ProductId;
+            }
+            set
+            {
+                OnProductIdChanging(value);
+                ReportPropertyChanging("ProductId");
+                _ProductId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ProductId");
+                OnProductIdChanged();
+            }
+        }
+        private global::System.Int32 _ProductId;
+        partial void OnProductIdChanging(global::System.Int32 value);
+        partial void OnProductIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime AverageLeadTime
+        {
+            get
+            {
+                return _AverageLeadTime;
+            }
+            set
+            {
+                OnAverageLeadTimeChanging(value);
+                ReportPropertyChanging("AverageLeadTime");
+                _AverageLeadTime = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AverageLeadTime");
+                OnAverageLeadTimeChanged();
+            }
+        }
+        private global::System.DateTime _AverageLeadTime;
+        partial void OnAverageLeadTimeChanging(global::System.DateTime value);
+        partial void OnAverageLeadTimeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal StandardPrice
+        {
+            get
+            {
+                return _StandardPrice;
+            }
+            set
+            {
+                OnStandardPriceChanging(value);
+                ReportPropertyChanging("StandardPrice");
+                _StandardPrice = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StandardPrice");
+                OnStandardPriceChanged();
+            }
+        }
+        private global::System.Decimal _StandardPrice;
+        partial void OnStandardPriceChanging(global::System.Decimal value);
+        partial void OnStandardPriceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal LastReceiveCost
+        {
+            get
+            {
+                return _LastReceiveCost;
+            }
+            set
+            {
+                OnLastReceiveCostChanging(value);
+                ReportPropertyChanging("LastReceiveCost");
+                _LastReceiveCost = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LastReceiveCost");
+                OnLastReceiveCostChanged();
+            }
+        }
+        private global::System.Decimal _LastReceiveCost;
+        partial void OnLastReceiveCostChanging(global::System.Decimal value);
+        partial void OnLastReceiveCostChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime LastReceiveDate
+        {
+            get
+            {
+                return _LastReceiveDate;
+            }
+            set
+            {
+                OnLastReceiveDateChanging(value);
+                ReportPropertyChanging("LastReceiveDate");
+                _LastReceiveDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LastReceiveDate");
+                OnLastReceiveDateChanged();
+            }
+        }
+        private global::System.DateTime _LastReceiveDate;
+        partial void OnLastReceiveDateChanging(global::System.DateTime value);
+        partial void OnLastReceiveDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MinOrderQuantity
+        {
+            get
+            {
+                return _MinOrderQuantity;
+            }
+            set
+            {
+                OnMinOrderQuantityChanging(value);
+                ReportPropertyChanging("MinOrderQuantity");
+                _MinOrderQuantity = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MinOrderQuantity");
+                OnMinOrderQuantityChanged();
+            }
+        }
+        private global::System.Int32 _MinOrderQuantity;
+        partial void OnMinOrderQuantityChanging(global::System.Int32 value);
+        partial void OnMinOrderQuantityChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MaxOrderQuantity
+        {
+            get
+            {
+                return _MaxOrderQuantity;
+            }
+            set
+            {
+                OnMaxOrderQuantityChanging(value);
+                ReportPropertyChanging("MaxOrderQuantity");
+                _MaxOrderQuantity = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MaxOrderQuantity");
+                OnMaxOrderQuantityChanged();
+            }
+        }
+        private global::System.Int32 _MaxOrderQuantity;
+        partial void OnMaxOrderQuantityChanging(global::System.Int32 value);
+        partial void OnMaxOrderQuantityChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] Version
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_Version);
+            }
+            set
+            {
+                OnVersionChanging(value);
+                ReportPropertyChanging("Version");
+                _Version = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Version");
+                OnVersionChanged();
+            }
+        }
+        private global::System.Byte[] _Version;
+        partial void OnVersionChanging(global::System.Byte[] value);
+        partial void OnVersionChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("HsrOrderAppModel", "FK__SupplierP__Produ__2334397B", "Product")]
+        public Product Products
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("HsrOrderAppModel.FK__SupplierP__Produ__2334397B", "Product").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("HsrOrderAppModel.FK__SupplierP__Produ__2334397B", "Product").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Product> ProductsReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Product>("HsrOrderAppModel.FK__SupplierP__Produ__2334397B", "Product");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Product>("HsrOrderAppModel.FK__SupplierP__Produ__2334397B", "Product", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("HsrOrderAppModel", "FK__SupplierP__Accou__22401542", "Supplier")]
+        public Supplier Supplier
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Supplier>("HsrOrderAppModel.FK__SupplierP__Accou__22401542", "Supplier").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Supplier>("HsrOrderAppModel.FK__SupplierP__Accou__22401542", "Supplier").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Supplier> SupplierReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Supplier>("HsrOrderAppModel.FK__SupplierP__Accou__22401542", "Supplier");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Supplier>("HsrOrderAppModel.FK__SupplierP__Accou__22401542", "Supplier", value);
                 }
             }
         }
