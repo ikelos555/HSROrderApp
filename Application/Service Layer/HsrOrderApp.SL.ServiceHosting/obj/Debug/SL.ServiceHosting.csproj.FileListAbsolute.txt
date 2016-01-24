@@ -39,3 +39,6 @@ C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.ServiceHosting\bin\Debug
 C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.ServiceHosting\obj\Debug\SL.ServiceHosting.csprojResolveAssemblyReference.cache
 C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.ServiceHosting\obj\Debug\HsrOrderApp.SL.ServiceHosting.exe
 C:\HSR_Project\Application\Service Layer\HsrOrderApp.SL.ServiceHosting\obj\Debug\HsrOrderApp.SL.ServiceHosting.pdb
+C:\Users\Marco\_GitHub\HSROrderApp_2016\Application\Service Layer\HsrOrderApp.SL.ServiceHosting\bin\Debug\HsrOrderApp.SL.ServiceHosting.exe.config
+C:\Users\Marco\_GitHub\HSROrderApp_2016\Application\Service Layer\HsrOrderApp.SL.ServiceHosting\obj\Debug\HsrOrderApp.SL.ServiceHosting.exe
+C:\Users\Marco\_GitHub\HSROrderApp_2016\Application\Service Layer\HsrOrderApp.SL.ServiceHosting\obj\Debug\HsrOrderApp.SL.ServiceHosting.pdb

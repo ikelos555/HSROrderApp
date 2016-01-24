@@ -75,3 +75,6 @@ C:\HSR_Project\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\obj\Debug\U
 C:\HSR_Project\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\obj\Debug\en-US\HsrOrderApp.UI.WPF.resources.dll
 C:\HSR_Project\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\obj\Debug\HsrOrderApp.UI.WPF.exe
 C:\HSR_Project\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\obj\Debug\HsrOrderApp.UI.WPF.pdb
+C:\Users\Marco\_GitHub\HSROrderApp_2016\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\bin\Debug\HsrOrderApp.UI.WPF.exe.config
+C:\Users\Marco\_GitHub\HSROrderApp_2016\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\obj\Debug\HsrOrderApp.UI.WPF.exe
+C:\Users\Marco\_GitHub\HSROrderApp_2016\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\obj\Debug\HsrOrderApp.UI.WPF.pdb

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\HSR_Project\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\obj\Debug\
+C:\Users\Marco\_GitHub\HSROrderApp_2016\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\obj\Debug\
 HsrOrderApp.UI.WPF
 none
 false
 DEBUG;TRACE
-C:\HSR_Project\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\App.xaml
+C:\Users\Marco\_GitHub\HSROrderApp_2016\Application\Presentation Layer\WPF\HsrOrderApp.UI.WPF\App.xaml
 151495986166
 
-481329614182
-191717627417
+48-1808642674
+191110855638
 Resources.xaml;DetailDialog.xaml;ResourcesDetailDialog.xaml;Views\AddressDetail.xaml;Views\RoleDetail.xaml;Views\UserDetail.xaml;Views\UserView.xaml;Views\OrderDetailDetail.xaml;Views\OrderDetail.xaml;Views\CustomerDetail.xaml;Views\CustomerView.xaml;Views\OrderView.xaml;Views\ProductDetail.xaml;Views\ProductView.xaml;MainWindow.xaml;
 
-False
+True
 
