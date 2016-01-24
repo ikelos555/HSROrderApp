@@ -90,6 +90,7 @@
           <Property Name="ActiveFlag" Type="int" Nullable="false" />
           <Property Name="PurchaseWebserviceUrl" Type="varchar" MaxLength="1" Nullable="false" />
           <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="SupplierProduct">
           <Key>
@@ -481,10 +482,11 @@
           <Property Name="SupplierProductId" Type="Int32" Nullable="false" />
           <Property Name="CreditRating" Type="Int32" Nullable="false" />
           <Property Name="PreferedSupplier" Type="Int32" Nullable="false" />
-          <Property Name="ActiveFlag" Type="Boolean" Nullable="false" />
+          <Property Name="ActiveFlag" Type="Int32" Nullable="false" />
           <Property Name="PurchaseWebserviceUrl" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <NavigationProperty Name="SupplierProduct" Relationship="HsrOrderAppModel.FK__SupplierP__Accou__22401542" FromRole="Supplier" ToRole="SupplierProduct" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SupplierProduct">
           <Key>
@@ -662,6 +664,7 @@
           <EntitySetMapping Name="SupplierSet">
             <EntityTypeMapping TypeName="HsrOrderAppModel.Supplier">
               <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Version" ColumnName="Version" />
                 <ScalarProperty Name="PurchaseWebserviceUrl" ColumnName="PurchaseWebserviceUrl" />
                 <ScalarProperty Name="ActiveFlag" ColumnName="ActiveFlag" />
@@ -710,7 +713,7 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="HsrOrderApp" xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+      <Diagram Name="HsrOrderApp" xmlns="http://schemas.microsoft.com/ado/2008/10/edmx" ZoomLevel="64">
         <EntityTypeShape EntityType="HsrOrderAppModel.Address" Width="1.5" PointX="0.75" PointY="5" Height="2.9417936197916656" IsExpanded="true" />
         <EntityTypeShape EntityType="HsrOrderAppModel.Customer" Width="1.5" PointX="3" PointY="3.5" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="HsrOrderAppModel.OrderDetail" Width="1.5" PointX="7.5" PointY="6.5" Height="2.1725878906249987" IsExpanded="true" />

@@ -1,4 +1,7 @@
-﻿using HsrOrderApp.BL.DomainModel;
+﻿using HsrOrderApp.BL.BusinessComponents;
+using HsrOrderApp.BL.DomainModel;
+using HsrOrderApp.BL.DtoAdapters;
+using HsrOrderApp.BL.DTOAdapters.Helper;
 using HsrOrderApp.SharedLibraries.DTO;
 using System;
 using System.Collections.Generic;
@@ -7,7 +10,7 @@ using System.Text;
 
 namespace HsrOrderApp.BL.DTOAdapters
 {
-    class SupplierAdapter
+    public class SupplierAdapter
     {
         #region SupplierToDTO
 
@@ -18,7 +21,7 @@ namespace HsrOrderApp.BL.DTOAdapters
                                                        {
                                                            AccountNumber = s.AccountNumber,
                                                            CreditRating = s.CreditRating,
-                                                           PreferedSupplier = s.PreferedSupplier,
+                                                           PreferedSuppliers = s.PreferedSupplier,
                                                            ActiveFlag = s.ActiveFlag,
 
                                                        };
@@ -38,23 +41,6 @@ namespace HsrOrderApp.BL.DTOAdapters
 
             return dto;
         }
-
-        #region private helpers
-
-        private static int GetNumberOfOrdersOfCustomer(Customer customer, bool draftOnly)
-        {
-            if (customer.Orders == null)
-            {
-                return 0;
-            }
-            if (draftOnly)
-            {
-                return customer.Orders.Count(o => o.OrderStatus == OrderStatus.Draft);
-            }
-            return customer.Orders.Count();
-        }
-
-        #endregion
 
         #endregion
 

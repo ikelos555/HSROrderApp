@@ -128,5 +128,36 @@
         <ScalarProperty Name="UserId" ColumnName="UserId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="SupplierSet">
+      <EntityTypeMapping TypeName="HsrOrderAppModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="PurchaseWebserviceUrl" ColumnName="PurchaseWebserviceUrl" />
+          <ScalarProperty Name="ActiveFlag" ColumnName="ActiveFlag" />
+          <ScalarProperty Name="PreferedSupplier" ColumnName="PreferedSupplier" />
+          <ScalarProperty Name="CreditRating" ColumnName="CreditRating" />
+          <ScalarProperty Name="SupplierProductId" ColumnName="SupplierProductId" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierProduct">
+      <EntityTypeMapping TypeName="HsrOrderAppModel.SupplierProduct">
+        <MappingFragment StoreEntitySet="SupplierProduct">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="MaxOrderQuantity" ColumnName="MaxOrderQuantity" />
+          <ScalarProperty Name="MinOrderQuantity" ColumnName="MinOrderQuantity" />
+          <ScalarProperty Name="LastReceiveDate" ColumnName="LastReceiveDate" />
+          <ScalarProperty Name="LastReceiveCost" ColumnName="LastReceiveCost" />
+          <ScalarProperty Name="StandardPrice" ColumnName="StandardPrice" />
+          <ScalarProperty Name="AverageLeadTime" ColumnName="AverageLeadTime" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="SupplierProductId" ColumnName="SupplierProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

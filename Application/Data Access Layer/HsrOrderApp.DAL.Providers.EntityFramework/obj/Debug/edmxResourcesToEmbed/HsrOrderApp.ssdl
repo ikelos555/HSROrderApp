@@ -1,60 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="HsrOrderAppModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-  <EntityContainer Name="HsrOrderAppModelStoreContainer">
-    <EntitySet Name="Addresses" EntityType="HsrOrderAppModel.Store.Addresses" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="CustomerAddresses" EntityType="HsrOrderAppModel.Store.CustomerAddresses" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="Customers" EntityType="HsrOrderAppModel.Store.Customers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="OrderDetails" EntityType="HsrOrderAppModel.Store.OrderDetails" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="Orders" EntityType="HsrOrderAppModel.Store.Orders" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="Products" EntityType="HsrOrderAppModel.Store.Products" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="Roles" EntityType="HsrOrderAppModel.Store.Roles" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="UserInRoles" EntityType="HsrOrderAppModel.Store.UserInRoles" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <EntitySet Name="Users" EntityType="HsrOrderAppModel.Store.Users" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-    <AssociationSet Name="FK_CustomerAddress_Addresses" Association="HsrOrderAppModel.Store.FK_CustomerAddress_Addresses">
-      <End Role="Addresses" EntitySet="Addresses" />
-      <End Role="CustomerAddresses" EntitySet="CustomerAddresses" />
-    </AssociationSet>
-    <AssociationSet Name="FK_CustomerAddress_Customers" Association="HsrOrderAppModel.Store.FK_CustomerAddress_Customers">
-      <End Role="Customers" EntitySet="Customers" />
-      <End Role="CustomerAddresses" EntitySet="CustomerAddresses" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OrderDetails_Orders" Association="HsrOrderAppModel.Store.FK_OrderDetails_Orders">
-      <End Role="Orders" EntitySet="Orders" />
-      <End Role="OrderDetails" EntitySet="OrderDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OrderDetails_Products" Association="HsrOrderAppModel.Store.FK_OrderDetails_Products">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="OrderDetails" EntitySet="OrderDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Orders_Customers" Association="HsrOrderAppModel.Store.FK_Orders_Customers">
-      <End Role="Customers" EntitySet="Customers" />
-      <End Role="Orders" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserInRoles_Roles" Association="HsrOrderAppModel.Store.FK_UserInRoles_Roles">
-      <End Role="Roles" EntitySet="Roles" />
-      <End Role="UserInRoles" EntitySet="UserInRoles" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserInRoles_Users" Association="HsrOrderAppModel.Store.FK_UserInRoles_Users">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="UserInRoles" EntitySet="UserInRoles" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Users_Customers" Association="HsrOrderAppModel.Store.FK_Users_Customers">
-      <End Role="Customers" EntitySet="Customers" />
-      <End Role="Users" EntitySet="Users" />
-    </AssociationSet>
-  </EntityContainer>
+<Schema Namespace="HsrOrderAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityType Name="Addresses">
     <Key>
       <PropertyRef Name="AddressId" />
     </Key>
-    <Property Name="AddressId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="AddressLine1" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="60" Nullable="false" />
     <Property Name="AddressLine2" Type="nvarchar" MaxLength="60" />
-    <Property Name="PostalCode" Type="nvarchar" Nullable="false" MaxLength="15" />
-    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <EntityType Name="CustomerAddresses">
     <Key>
@@ -68,53 +25,82 @@
     <Key>
       <PropertyRef Name="CustomerId" />
     </Key>
-    <Property Name="CustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="15" />
-    <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <EntityType Name="OrderDetails">
     <Key>
       <PropertyRef Name="OrderDetailId" />
     </Key>
-    <Property Name="OrderDetailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderId" Type="int" Nullable="false" />
     <Property Name="ProductId" Type="int" Nullable="false" />
     <Property Name="UnitPrice" Type="money" Nullable="false" />
     <Property Name="QuantityInUnits" Type="int" Nullable="false" />
-    <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <EntityType Name="Orders">
     <Key>
       <PropertyRef Name="OrderId" />
     </Key>
-    <Property Name="OrderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CustomerId" Type="int" Nullable="false" />
     <Property Name="OrderDate" Type="datetime" />
     <Property Name="ShippedDate" Type="datetime" />
     <Property Name="OrderStatus" Type="int" Nullable="false" />
-    <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <EntityType Name="Products">
     <Key>
       <PropertyRef Name="ProductId" />
     </Key>
-    <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="ProductNumber" Type="nvarchar" Nullable="false" MaxLength="25" />
-    <Property Name="Category" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="QuantityPerUnit" Type="float" Nullable="false" />
     <Property Name="ListUnitPrice" Type="money" Nullable="false" />
     <Property Name="UnitsOnStock" Type="int" Nullable="false" />
-    <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
       <PropertyRef Name="RoleId" />
     </Key>
-    <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="AccountNumber" />
+    </Key>
+    <Property Name="AccountNumber" Type="int" Nullable="false" />
+    <Property Name="AddressId" Type="int" Nullable="false" />
+    <Property Name="SupplierProductId" Type="int" Nullable="false" />
+    <Property Name="CreditRating" Type="int" Nullable="false" />
+    <Property Name="PreferedSupplier" Type="int" Nullable="false" />
+    <Property Name="ActiveFlag" Type="int" Nullable="false" />
+    <Property Name="PurchaseWebserviceUrl" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SupplierProduct">
+    <Key>
+      <PropertyRef Name="SupplierProductId" />
+    </Key>
+    <Property Name="SupplierProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountNumber" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="AverageLeadTime" Type="datetime" Nullable="false" />
+    <Property Name="StandardPrice" Type="money" Nullable="false" />
+    <Property Name="LastReceiveCost" Type="money" Nullable="false" />
+    <Property Name="LastReceiveDate" Type="datetime" Nullable="false" />
+    <Property Name="MinOrderQuantity" Type="int" Nullable="false" />
+    <Property Name="MaxOrderQuantity" Type="int" Nullable="false" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <EntityType Name="UserInRoles">
     <Key>
@@ -128,17 +114,41 @@
     <Key>
       <PropertyRef Name="UserId" />
     </Key>
-    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
     <Property Name="CustomerId" Type="int" />
-    <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
+  <Association Name="FK__SupplierP__Accou__22401542">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="SupplierProduct" Type="Self.SupplierProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="AccountNumber" />
+      </Principal>
+      <Dependent Role="SupplierProduct">
+        <PropertyRef Name="AccountNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SupplierP__Produ__2334397B">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="SupplierProduct" Type="Self.SupplierProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="SupplierProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_CustomerAddress_Addresses">
-    <End Role="Addresses" Type="HsrOrderAppModel.Store.Addresses" Multiplicity="1">
+    <End Role="Addresses" Type="Self.Addresses" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="CustomerAddresses" Type="HsrOrderAppModel.Store.CustomerAddresses" Multiplicity="*" />
+    <End Role="CustomerAddresses" Type="Self.CustomerAddresses" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Addresses">
         <PropertyRef Name="AddressId" />
@@ -149,10 +159,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CustomerAddress_Customers">
-    <End Role="Customers" Type="HsrOrderAppModel.Store.Customers" Multiplicity="1">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="CustomerAddresses" Type="HsrOrderAppModel.Store.CustomerAddresses" Multiplicity="*" />
+    <End Role="CustomerAddresses" Type="Self.CustomerAddresses" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Customers">
         <PropertyRef Name="CustomerId" />
@@ -163,10 +173,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_OrderDetails_Orders">
-    <End Role="Orders" Type="HsrOrderAppModel.Store.Orders" Multiplicity="1">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="OrderDetails" Type="HsrOrderAppModel.Store.OrderDetails" Multiplicity="*" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Orders">
         <PropertyRef Name="OrderId" />
@@ -177,8 +187,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_OrderDetails_Products">
-    <End Role="Products" Type="HsrOrderAppModel.Store.Products" Multiplicity="1" />
-    <End Role="OrderDetails" Type="HsrOrderAppModel.Store.OrderDetails" Multiplicity="*" />
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Products">
         <PropertyRef Name="ProductId" />
@@ -189,10 +199,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Orders_Customers">
-    <End Role="Customers" Type="HsrOrderAppModel.Store.Customers" Multiplicity="1">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Orders" Type="HsrOrderAppModel.Store.Orders" Multiplicity="*" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Customers">
         <PropertyRef Name="CustomerId" />
@@ -203,10 +213,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserInRoles_Roles">
-    <End Role="Roles" Type="HsrOrderAppModel.Store.Roles" Multiplicity="1">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="UserInRoles" Type="HsrOrderAppModel.Store.UserInRoles" Multiplicity="*" />
+    <End Role="UserInRoles" Type="Self.UserInRoles" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Roles">
         <PropertyRef Name="RoleId" />
@@ -217,10 +227,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserInRoles_Users">
-    <End Role="Users" Type="HsrOrderAppModel.Store.Users" Multiplicity="1">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="UserInRoles" Type="HsrOrderAppModel.Store.UserInRoles" Multiplicity="*" />
+    <End Role="UserInRoles" Type="Self.UserInRoles" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserId" />
@@ -231,10 +241,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Users_Customers">
-    <End Role="Customers" Type="HsrOrderAppModel.Store.Customers" Multiplicity="0..1">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Users" Type="HsrOrderAppModel.Store.Users" Multiplicity="*" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Customers">
         <PropertyRef Name="CustomerId" />
@@ -244,4 +254,57 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityContainer Name="HsrOrderAppModelStoreContainer">
+    <EntitySet Name="Addresses" EntityType="Self.Addresses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerAddresses" EntityType="Self.CustomerAddresses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SupplierProduct" EntityType="Self.SupplierProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInRoles" EntityType="Self.UserInRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__SupplierP__Accou__22401542" Association="Self.FK__SupplierP__Accou__22401542">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="SupplierProduct" EntitySet="SupplierProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SupplierP__Produ__2334397B" Association="Self.FK__SupplierP__Produ__2334397B">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="SupplierProduct" EntitySet="SupplierProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerAddress_Addresses" Association="Self.FK_CustomerAddress_Addresses">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="CustomerAddresses" EntitySet="CustomerAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerAddress_Customers" Association="Self.FK_CustomerAddress_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerAddresses" EntitySet="CustomerAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Orders" Association="Self.FK_OrderDetails_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Products" Association="Self.FK_OrderDetails_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Customers" Association="Self.FK_Orders_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInRoles_Roles" Association="Self.FK_UserInRoles_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserInRoles" EntitySet="UserInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInRoles_Users" Association="Self.FK_UserInRoles_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserInRoles" EntitySet="UserInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Customers" Association="Self.FK_Users_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

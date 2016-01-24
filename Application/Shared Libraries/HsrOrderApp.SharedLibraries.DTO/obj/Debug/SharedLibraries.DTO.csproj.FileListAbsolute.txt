@@ -9,3 +9,14 @@ C:\HSR_Project\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\bin\
 C:\HSR_Project\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\obj\Debug\SharedLibraries.DTO.csprojResolveAssemblyReference.cache
 C:\HSR_Project\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\obj\Debug\HsrOrderApp.SharedLibraries.DTO.dll
 C:\HSR_Project\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\obj\Debug\HsrOrderApp.SharedLibraries.DTO.pdb
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\bin\Debug\HsrOrderApp.SharedLibraries.DTO.dll
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\bin\Debug\HsrOrderApp.SharedLibraries.DTO.pdb
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\bin\Debug\HsrOrderApp.SharedLibraries.SharedEnums.dll
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Validation.dll
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\bin\Debug\HsrOrderApp.SharedLibraries.SharedEnums.pdb
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\obj\Debug\SharedLibraries.DTO.csprojResolveAssemblyReference.cache
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\obj\Debug\HsrOrderApp.SharedLibraries.DTO.dll
+C:\Users\Marco\_GitHub\HSROrderApp\Application\Shared Libraries\HsrOrderApp.SharedLibraries.DTO\obj\Debug\HsrOrderApp.SharedLibraries.DTO.pdb

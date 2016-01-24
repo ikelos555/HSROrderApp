@@ -14,7 +14,7 @@ namespace HsrOrderApp.BL.DomainModel
             this.AccountNumber = default(int);
             this.CreditRating = default(int);
             this.PreferedSupplier = default(int);
-            this.ActiveFlag = default(bool);
+            this.ActiveFlag = default(int);
             this.PuchraseWebserviceUrl = string.Empty;
         }
 
@@ -27,7 +27,7 @@ namespace HsrOrderApp.BL.DomainModel
         public int PreferedSupplier { get; set; }
 
         [StringLengthValidator(1, 50)]
-        public bool ActiveFlag { get; set; }
+        public int ActiveFlag { get; set; }
 
         [StringLengthValidator(1, 50)]
         public string PuchraseWebserviceUrl { get; set; }

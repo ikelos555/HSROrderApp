@@ -1666,7 +1666,7 @@ namespace HsrOrderApp.DAL.Providers.EntityFramework
         /// <param name="activeFlag">Initial value of the ActiveFlag property.</param>
         /// <param name="purchaseWebserviceUrl">Initial value of the PurchaseWebserviceUrl property.</param>
         /// <param name="version">Initial value of the Version property.</param>
-        public static Supplier CreateSupplier(global::System.Int32 accountNumber, global::System.Int32 addressId, global::System.Int32 supplierProductId, global::System.Int32 creditRating, global::System.Int32 preferedSupplier, global::System.Boolean activeFlag, global::System.String purchaseWebserviceUrl, global::System.Byte[] version)
+        public static Supplier CreateSupplier(global::System.Int32 accountNumber, global::System.Int32 addressId, global::System.Int32 supplierProductId, global::System.Int32 creditRating, global::System.Int32 preferedSupplier, global::System.Int32 activeFlag, global::System.String purchaseWebserviceUrl, global::System.Byte[] version)
         {
             Supplier supplier = new Supplier();
             supplier.AccountNumber = accountNumber;
@@ -1812,7 +1812,7 @@ namespace HsrOrderApp.DAL.Providers.EntityFramework
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean ActiveFlag
+        public global::System.Int32 ActiveFlag
         {
             get
             {
@@ -1827,8 +1827,8 @@ namespace HsrOrderApp.DAL.Providers.EntityFramework
                 OnActiveFlagChanged();
             }
         }
-        private global::System.Boolean _ActiveFlag;
-        partial void OnActiveFlagChanging(global::System.Boolean value);
+        private global::System.Int32 _ActiveFlag;
+        partial void OnActiveFlagChanging(global::System.Int32 value);
         partial void OnActiveFlagChanged();
     
         /// <summary>
@@ -1878,6 +1878,30 @@ namespace HsrOrderApp.DAL.Providers.EntityFramework
         private global::System.Byte[] _Version;
         partial void OnVersionChanging(global::System.Byte[] value);
         partial void OnVersionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
 
         #endregion
 
