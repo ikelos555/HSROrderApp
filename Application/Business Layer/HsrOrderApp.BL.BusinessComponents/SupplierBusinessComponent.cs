@@ -34,11 +34,11 @@ namespace HsrOrderApp.BL.BusinessComponents
             return customer;
         }
 
-        public IQueryable<Supplier> GetSupplierByCriteria(int preferred, bool active, CreditRating creditRating)
+        public IQueryable<Supplier> GetSupplierByCriteria(int preferred, int active, CreditRating creditRating)
         {
             IQueryable<Supplier> customers = new List<Supplier>().AsQueryable();
             
-            customers = rep.GetAll().Where(s => s.ActiveFlag == active && 
+            customers = rep.GetAll().Where(s => s.ActiveFlag == 1 && 
                                                 s.PreferedSupplier == preferred && 
                                                 s.CreditRating == (int) creditRating);
             
